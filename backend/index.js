@@ -1,13 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose');
-const router = require('./routes/user')
+const userRouter = require('./routes/user')
+const transportRouter = require('./routes/transport')
 const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3001
 
 app.use(bodyParser.json())
-app.use('/user', router);
+app.use('/user', userRouter);
+app.use('/transport',transportRouter)
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
