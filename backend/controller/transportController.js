@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 
 const addTransport = async (req,res) => {
   
+  console.log("Adding");
+
     const {type,route,seats,price,image} = req.body;
 
     const newTransport = new transport({type,route,seats,price,image});

@@ -18,7 +18,6 @@ const login = (req, res)=>{
                "saimsaleem",{
                     expiresIn: '5h'
                 })
-                
                 res.status(200).send({"Message":"Successfully LOGGED IN", user:foundUser, token:token})
             }else{
                 res.status(500).send({"Message":"Invalid Password"})
