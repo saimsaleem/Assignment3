@@ -2,6 +2,7 @@ import React from 'react'
 import './AddTransport.css'
 import axios from 'axios'
 import { useState } from 'react'
+import Sidebar from './Sidebar';
 
 export default function AddTransport() {
 
@@ -50,6 +51,7 @@ const submit = () => {
 
   return (
           <>
+          <Sidebar/>
 <div>
 <div className="subMenu" data-testid="SubMenu">
   <div className="submenutitle">Back to Main Menu</div>

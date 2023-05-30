@@ -2,6 +2,7 @@ import React from 'react'
 import './DisplayTransport.css'
 import axios from 'axios';
 import { useState ,useEffect} from 'react';
+import Sidebar from './Sidebar';
 
 export default function DisplayTransport() {
    const [TransportList, setTransportList] = useState([]);
@@ -22,6 +23,7 @@ export default function DisplayTransport() {
 
     return (
         <>
+        <Sidebar/>
         <div className='header'>
 
         <div className='page'>
@@ -55,10 +57,10 @@ export default function DisplayTransport() {
                   <div className='flex'>
                   <button className='cardbtn' onClick={ async() => {
 
-                        (await axios.delete(`http://localhost:3001/transport/deleteTransport/${transport._id}`, {headers}))
+                        (await axios.delete(`http://localhost:3001/transport/deleteTransport/${transport._id}`, {headers})
                           .then(window.location.reload(false))
-                          .catch((error)=> console.log(error));
-                          
+                          .catch((error)=> console.log(error))
+                        );
                   }}>Delete</button>
 
                   </div>

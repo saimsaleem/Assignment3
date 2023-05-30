@@ -2,6 +2,7 @@ import React from 'react'
 import './UpdateTransport.css';
 import axios from 'axios';
 import { useState} from 'react';
+import Sidebar from './Sidebar';
 
 export default function UpdateTransport(){
 
@@ -19,6 +20,7 @@ export default function UpdateTransport(){
 
     return (
     <>
+    <Sidebar/>
 <div class="updatepage">
 
     <div className="searchbox" data-testid="SearchBox">

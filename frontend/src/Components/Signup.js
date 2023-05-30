@@ -2,6 +2,7 @@ import React from 'react'
 import './AddTransport.css'
 import axios from 'axios'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function AddTransport() {
 
@@ -9,6 +10,7 @@ const [name,setName]= useState("");
 const [email,setEmail]= useState("");
 const [password,setPassword]= useState("");
 const [role,setRole]= useState("");
+const navigate = useNavigate();
 const submit = () => {
   
   axios.post('http://localhost:3001/user/signup', {
@@ -19,10 +21,10 @@ const submit = () => {
   alert("Name: " + name +
   "\nEmail: " + email +
   "\nPassword: " + password +
-  "\nRoles: " + role+
+  "\nRole: " + role+
   "\nAdded to Database!"
   );
-    return response;
+    navigate('/login');
 
   })
   .catch(function (error) {
@@ -42,11 +44,8 @@ const submit = () => {
   return (
           <>
 <div>
-<div className="subMenu" data-testid="SubMenu">
-  <div className="submenutitle">Back to Main Menu</div>
-          <div >
-        <a href='/'><button className="menubtn">Menu</button></a>
-          </div>
+<div className='hed'>
+    <a href='/login'><button className='logout'>Login</button></a>
     </div>
 
 	    <div className="form" data-testid = "AddForm">
@@ -76,13 +75,17 @@ const submit = () => {
         <label for="password" className="placeholder">Password</label>
       </div>
 
-      <div className="input-container ic2">
-        <input id="role" className="input" type="text" placeholder=" " 
-        value={role} onChange={(event) => {
-          setRole(event.target.value);}}/>
-        <div className="cut cut-short"></div>
-        <label for="role" className="placeholder" >Role</label>
-      </div>
+<div className="input-container ic2">
+  <select id="role" className="input" value={role} onChange={(event) => {
+    setRole(event.target.value);
+  }}>
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+  <div className="cut cut-short"></div>
+  <label htmlFor="role" className="placeholder">Role</label>
+</div>
+
       <div data-testid="SubmitToAdd">
       <button type="text" className="submit" onClick={function(event){ submit()}}>Register</button>
       </div>

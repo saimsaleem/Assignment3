@@ -34,6 +34,9 @@ const submit = () => {
 
   return (
           <>
+        <div className='hed'>
+    <a href='/signup'><button className='logout'>Signup</button></a>
+    </div>
 <div>
 	    <div className="formm" data-testid = "AddForm">
       <div className="title">Welcome</div>

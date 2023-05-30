@@ -8,7 +8,9 @@ export default function TransportMenu() {
         
 <div data-testid="MenuT">
 <div className='hed'>
-    <a href='/login'><button className='logout'>Logout</button></a>
+    <a href='/login'><button className='logout' onClick={()=>{
+      localStorage.removeItem('token');
+    }}>Logout</button></a>
 
 <div >
 <h1  className='titlee'>𝚃𝚁𝙰𝙽𝚂𝙿𝙾𝚁𝚃𝙴𝚁</h1>

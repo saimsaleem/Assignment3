@@ -8,7 +8,6 @@
     width: 520px;
     text-align: center;
     margin-left: 33%;;
-    margin-top: 3%;
   }
   
   .title {
@@ -55,6 +54,19 @@
     width: 100%;
   }
   
+select{
+  background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
   .cut {
     background-color: #15172b;
     border-radius: 100px;
