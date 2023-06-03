@@ -17,7 +17,7 @@ const submit = () => {
   .then(function (response) {
     if(response){
         localStorage.setItem('token', response.data.token);
-        navigate('/');
+        navigate('/menu');
     }
   })
   .catch(function (error) {

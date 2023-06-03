@@ -48,7 +48,7 @@ const submit = () => {
     <a href='/login'><button className='logout'>Login</button></a>
     </div>
 
-	    <div className="form" data-testid = "AddForm">
+	    <div className="form" data-testid = "AddForm" style={{ marginTop: '100px', height: '520px'}}>
       <div className="title">Welcome</div>
       <div className="subtitle">Regster yourself and become a Transporter</div>
       <div className="input-container ic1">
